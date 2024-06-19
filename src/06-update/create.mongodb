@@ -1,0 +1,37 @@
+use("platzi_store")
+
+//se borran todos los documentos de esta coleccion
+db.products.drop()
+
+//para insertar varios docuementos a la vez
+db.products.insertMany([
+    {
+        _id : 123,
+        name: "product 1",
+        precion: 1200
+    },
+    {
+        _id : 124,
+        name: "product 2",
+        precion: 120087
+    },
+    {
+        _id : 127,
+        name: "product 3",
+        precion: 1244
+    },
+    {
+        _id : 12355,
+        name: "product 4",
+        precion: 1244
+    },
+    {
+        name: "product 5",
+        precion: 1244
+    },
+],
+{
+    ordered: false //para que cuando ocurra un error cree los que si se peuden crear
+})
+
+db.products.find()

@@ -1,0 +1,31 @@
+operators  
+
+* $set => modificar, agregar un campo
+* $inc => adicionar un valior a un campo existente
+* $rename => toma un atributo para renombrarlo
+* $unset => eliminar un atributo 
+* $push => Añade un valor a un atributo de tipo conjunto (array). |
+* $pull => Elimina un valor específico de un atributo de tipo conjunto (array). |
+* $in => determina una lista, como en sql delete where in (etc...)
+* $pop => Elimina el primer o último elemento de un atributo de tipo conjunto (array). |
+
+//comparacion
+* $eq => igual que (=)
+* $ne => no igual que (!=)
+* $gt => greater than  (>)
+* $gte => greater than or equal  (>=)
+* $lt => less than  (<)
+* $lte => less than or equal (<=)
+
+* upsert: Esta condición permite agregar un elemento en un array dentro de un documento. Lo que lo hace especial es que si el documento no existe, este operador lo crea, y si ya existe, inserta los nuevo elementos del array sobre el documento existente.
+
+--otros operadores mas
+* $mul: Multiplica el valor de un atributo numérico por un factor específico.
+* $min: Actualiza el valor de un atributo con el valor mínimo especificado, sólo si el valor actual es mayor que el valor especificado. |
+* $max: Actualiza el valor de un atributo con el valor máximo especificado, sólo si el valor actual es menor que el valor especificado. |
+* $currentDate: Establece el valor de un atributo como la fecha y hora actual. |
+* $addToSet: Añade un valor a un atributo de tipo conjunto (array), sólo si el valor no existe en el conjunto. |
+* $pullAll: Elimina varios valores específicos de un atributo de tipo conjunto (array).
+
+
+** al hacer un updateMany con el query vacio, es que se toman todos los elementos

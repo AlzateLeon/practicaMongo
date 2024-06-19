@@ -1,0 +1,13 @@
+use("platzi_store")
+
+//Inc es para incrementar adicionar un valor a un campo
+db.products.updateOne(
+    //query
+    {_id : 127},
+    //cambio => operators 
+    {
+        $inc:{ //set es de cambio
+            precion: 66 
+        }
+    }
+)

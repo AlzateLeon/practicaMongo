@@ -1,0 +1,22 @@
+
+//si no esta creada el la crea
+use("platzi_store")
+
+//al igual que las colecciones
+db.products.insertOne({
+    name: "producto 1",
+    price: 20000
+})
+
+db.products.insertOne({
+    name: "producto 2",
+    price: 2003
+})
+
+//todos los ids vienen con _id, son unicos
+
+db.products.insertOne({
+    name: "producto 2",
+    price: 2003,
+    _id : 1
+})

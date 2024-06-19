@@ -1,0 +1,17 @@
+use("platzi_store")
+
+//operador mas usado
+db.products.updateOne(
+    //query
+    {_id : 127},
+    //cambio => operators 
+    {
+        $set:{ //set es de cambio
+            //se puede cambiar uno o los que se quiera
+            name : "nombre nuevo 2",
+            proce: 34, 
+            //se puede agregar nuevos campos tambien
+            tags: ['A', 'B', 'C']
+        }
+    }
+)

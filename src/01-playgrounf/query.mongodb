@@ -5,3 +5,5 @@ db.zips.find({ state: "NY" })
 
 //count
 db.zips.find({ state: "NY" }).count()
+
+db.products.find()

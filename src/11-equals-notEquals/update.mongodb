@@ -1,0 +1,11 @@
+use("platzi_store")
+
+//---NOt equals to 20 increment docuemnts
+db.inventory.updateMany(
+    { qty: { $ne: 20 } },
+    {
+        $inc: {
+            qty: 20
+        }
+    }
+)

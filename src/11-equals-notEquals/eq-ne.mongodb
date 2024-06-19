@@ -1,0 +1,18 @@
+use("platzi_store")
+
+//using equals
+// db.inventory.find({
+//     qty: 20
+// })
+
+//same
+db.inventory.find({qty: {$eq: 20}})
+
+//find by elemtn in another sub docuemnt
+db.inventory.find({"item.code": "123"})
+//same
+db.inventory.find({"item.code": {$eq: "123"} })
+
+
+//---NOt equals
+db.inventory.find({qty: {$ne: 20}})

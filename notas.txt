@@ -1,0 +1,8 @@
+** bson 
+formatos de fecha, binartios, enteros, flotantes, 
+pero no es estandar, lo usa mongo, no es facil de leer, es para la maquina
+
+tipos de datos extra
+
+** CRUD
+insert -> 

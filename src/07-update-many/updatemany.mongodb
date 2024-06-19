@@ -1,0 +1,44 @@
+use("sample_training")
+
+db.zips.find().count()
+
+db.zips.find({
+    city: "CLEVELAND"
+})
+
+//2369
+//1244
+//actualiza 34 documentos a la vez
+// db.zips.updateMany(
+//     { city: "CLEVELAND"},
+//     {
+//         $set: {
+//             myAtribute : 100
+//         }
+//     }
+// )
+
+
+//renombrar el campo pop a poblacion
+// db.zips.updateMany(
+//     { city: "CLEVELAND"},
+//     {
+//         $rename: {
+//             pop : "poblacion"
+//         }
+//     }
+// )
+
+//eliminar un campo 
+db.zips.updateMany(
+    { city: "CLEVELAND"},
+    {
+        $unset: {
+            myAtribute : ""
+        }
+    }
+)
+
+db.zips.find({
+    city: "CLEVELAND"
+})

@@ -1,0 +1,14 @@
+use("platzi_store")
+
+//delete only one element
+db.products.deleteOne({
+    _id: 1
+})
+
+//delete many elements, need a query
+db.products.deleteMany({
+    price: 100
+})
+
+//delete all elements of a document
+db.products.drop()

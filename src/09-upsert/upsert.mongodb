@@ -1,0 +1,15 @@
+use("platzi_store")
+
+//no importa si es una insercion o una update
+//se valida los parametos del primer {} para ver si existe o no
+db.iot.updateOne({
+    sensor: "A001",
+    date: "2022-01-04"
+},{
+    $push: {
+        readings: 87
+    }
+},{
+    upsert: true
+}
+)
