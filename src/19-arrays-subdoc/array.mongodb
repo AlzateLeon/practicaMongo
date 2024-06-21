@@ -1,0 +1,43 @@
+use("sample_training")
+
+db.trips.find({
+    "start station location.type": {
+        $regex: /point/i
+    }
+})
+
+//ir directoa una posicion del array
+db.companies.find(
+    {
+        "relationships.0.person.last_name": "Zuckerberg"
+    },
+    { name: 1, relationships: 1 }
+)
+
+//(solo los de la poscion 0)
+db.companies.find(
+    {
+        "relationships.0.person.first_name": "Mark"
+    },
+    { name: 1, relationships: 1 }
+).count() //count 108
+
+
+db.companies.find(
+    {
+        "relationships.person.first_name": "Mark"
+    },
+    { name: 1, relationships: 1 }
+).count() //count 523
+
+
+db.companies.find(
+    {
+        relationships:{
+            $elemMatch : {
+                "person.first_name": "Mark"
+            }
+        }
+    },
+    { name: 1, relationships: 1 }
+).count() //count 523

@@ -1,0 +1,8 @@
+use("sample_training")
+
+//1 ascendente - A - Z, 0 - 10
+//-1 descendente - Z - A, 10 - 0
+db.zips.find(
+    { pop: { $gte: 100 }}
+).sort({ pop: -1 }). //organizar
+limit(2) //limitar cantidad de resultados de la busqueda

@@ -1,0 +1,43 @@
+use("platzi_store")
+
+//buscar por una palabra, expresion regular
+db.inventory.find({
+    "item.description": 
+    {$regex: /line/ }
+});
+
+//buscar por una palabra, sin importar mayus y minus
+db.inventory.find({
+    "item.description": 
+    {$regex: /line/i }
+});
+
+//buscar por una palabra final
+db.inventory.find({
+    "item.description": 
+    {$regex: /line$/ }
+});
+
+//buscar por una palabra inicial
+db.inventory.find({
+    "item.description": 
+    {$regex: /^single/i }
+});
+
+//No tiene en cuenta los saltos de linea
+db.inventory.find({
+    "item.description": 
+    {$regex: /^s/i }
+});
+
+//No tiene en cuenta los saltos de linea
+db.inventory.find({
+    "item.description": 
+    {$regex: /^s/i }
+});
+
+//No tiene en cuenta los saltos de linea
+db.inventory.find({
+    "item.description": 
+    {$regex: /^s/im }
+});

@@ -19,6 +19,14 @@ operators
 
 * upsert: Esta condición permite agregar un elemento en un array dentro de un documento. Lo que lo hace especial es que si el documento no existe, este operador lo crea, y si ya existe, inserta los nuevo elementos del array sobre el documento existente.
 
+++Consultas++
+
+/line/ => nos devuelve los doc que tengan la palabra line, exactamente como esta escrita.
+/line/i => nos devuelve los doc que tengan la palabra line, ignorando minus-mayus.
+/line$/ => nos devuelve los doc que terminen con la palabra line.
+/^Single/ => nos devuelve los doc que empiecen con la palabra Single.
+/^S/m => nos devuelve los doc que empiecen por S, ignorando los saltos de linea. Ej: ( Single line Second line ).
+
 --otros operadores mas
 * $mul: Multiplica el valor de un atributo numérico por un factor específico.
 * $min: Actualiza el valor de un atributo con el valor mínimo especificado, sólo si el valor actual es mayor que el valor especificado. |
@@ -29,3 +37,9 @@ operators
 
 
 ** al hacer un updateMany con el query vacio, es que se toman todos los elementos
+
+** operadores logicos
+$and => que cumpla las dos o más condiciones dadas.
+$or => los que cumplan al menos una condición.
+$nor => los que no cumplan con ninguna condición.
+$not => excluye un elemento en especifico y no tiene forma de array

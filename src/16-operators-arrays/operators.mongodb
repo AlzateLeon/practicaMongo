@@ -1,0 +1,59 @@
+use("platzi_store")
+
+//$in sirve para valores especificos y arrays
+//especifico
+db.inventory.find({
+    qty : {
+        $in: [20, 25]
+    }
+})
+
+//arrays
+db.inventory.find({
+    tags : {
+        $in: ["electronics", "book"]
+    }
+})
+
+//not in $nin
+db.inventory.find({
+    tags : {
+        $nin: ["electronics", "book"]
+    }
+})
+
+//===========solo para arrays==========}
+//$all que tenga este y este, es un AND logico,
+//no importa el orden, solo que contenga estos valores
+db.inventory.find({
+    tags : {
+        $all: ["book", "school", "appliance"]
+    }
+})
+
+//$size, que tenga x cantidad de elementos
+db.inventory.find({
+    tags : {
+        $size: 2
+    }
+})
+
+
+//$elemMatch, arrays de docuemntos(objetos),
+//si hace match d e1 retorna el documento
+db.survey.find({
+    results : {
+        $elemMatch: {
+            product: "xyz",
+            score: {
+                $gte : 7
+            }
+        }
+    }
+})
+
+db.inventory.find({
+    $expr: {
+        $gte: [{ $size: "$tags" }, 2]
+    }
+})

@@ -1,0 +1,8 @@
+use("platzi_store")
+
+//skip: indice de donde inicia la paginacion
+//limit cantidad de docuemntos a retornar por pagina
+db.categories
+    .find()
+    .skip(2)
+    .limit(2)

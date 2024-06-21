@@ -1,0 +1,15 @@
+use("platzi_store")
+
+db.inventory.find()
+db.inventory.find(
+    //query
+    {
+        "item.code": "123",
+        "item.description":
+            { $regex: /line/ }
+    },
+    //projections
+    {
+     item: 1
+    }
+)
